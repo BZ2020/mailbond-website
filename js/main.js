@@ -174,4 +174,22 @@
     '.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }';
   document.head.appendChild(style);
 
+  // ---------- Cookie Consent Banner ----------
+  (function initCookieBanner() {
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    var consent = localStorage.getItem('mailbond_cookie_consent');
+    if (consent) return;               // Already answered
+    banner.style.display = 'block';
+
+    document.getElementById('cookie-accept').addEventListener('click', function () {
+      localStorage.setItem('mailbond_cookie_consent', 'accepted');
+      banner.style.display = 'none';
+    });
+    document.getElementById('cookie-decline').addEventListener('click', function () {
+      localStorage.setItem('mailbond_cookie_consent', 'declined');
+      banner.style.display = 'none';
+    });
+  })();
+
 })();
