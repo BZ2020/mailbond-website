@@ -76,20 +76,35 @@
         return;
       }
 
-      // For now, show success message (replace with actual endpoint later)
-      setTimeout(function () {
-        btn.textContent = 'Demo Requested!';
-        btn.style.background = '#10b981';
-        btn.style.borderColor = '#10b981';
-        form.reset();
-
-        setTimeout(function () {
-          btn.textContent = originalText;
-          btn.style.background = '';
-          btn.style.borderColor = '';
-          btn.disabled = false;
-        }, 3000);
-      }, 800);
+      fetch('https://mailbond-api.azurewebsites.net/api/demo-request', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Request failed');
+          btn.textContent = 'Demo Requested!';
+          btn.style.background = '#10b981';
+          btn.style.borderColor = '#10b981';
+          form.reset();
+          setTimeout(function () {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.style.borderColor = '';
+            btn.disabled = false;
+          }, 3000);
+        })
+        .catch(function () {
+          btn.textContent = 'Error — try again';
+          btn.style.background = '#ef4444';
+          btn.style.borderColor = '#ef4444';
+          setTimeout(function () {
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.style.borderColor = '';
+            btn.disabled = false;
+          }, 3000);
+        });
     });
   }
 
