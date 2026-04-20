@@ -76,12 +76,43 @@
         return;
       }
 
+      // Block personal email domains
+      var personalDomains = [
+        'gmail.com','yahoo.com','hotmail.com','outlook.com','aol.com',
+        'icloud.com','mail.com','protonmail.com','proton.me','zoho.com',
+        'yandex.com','gmx.com','gmx.net','live.com','msn.com',
+        'me.com','mac.com','inbox.com','fastmail.com','tutanota.com'
+      ];
+      var emailDomain = data.email.split('@')[1];
+      if (emailDomain && personalDomains.indexOf(emailDomain.toLowerCase()) !== -1) {
+        var emailInput = form.querySelector('#email');
+        emailInput.setCustomValidity('Please enter your work email address.');
+        emailInput.reportValidity();
+        emailInput.addEventListener('input', function handler() {
+          emailInput.setCustomValidity('');
+          emailInput.removeEventListener('input', handler);
+        });
+        btn.textContent = originalText;
+        btn.disabled = false;
+        return;
+      }
+
       fetch('https://mailbond-api-hqc0h2g7b2abfhab.westus3-01.azurewebsites.net/api/demo-request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
       })
         .then(function (res) {
+          if (res.status === 422) {
+            var emailInput = form.querySelector('#email');
+            emailInput.setCustomValidity('Please enter your work email address.');
+            emailInput.reportValidity();
+            emailInput.addEventListener('input', function handler() {
+              emailInput.setCustomValidity('');
+              emailInput.removeEventListener('input', handler);
+            });
+            throw new Error('personal_email');
+          }
           if (!res.ok) throw new Error('Request failed');
           btn.textContent = 'Demo Requested!';
           btn.style.background = '#10b981';
@@ -94,7 +125,12 @@
             btn.disabled = false;
           }, 3000);
         })
-        .catch(function () {
+        .catch(function (err) {
+          if (err.message === 'personal_email') {
+            btn.textContent = originalText;
+            btn.disabled = false;
+            return;
+          }
           btn.textContent = 'Error — try again';
           btn.style.background = '#ef4444';
           btn.style.borderColor = '#ef4444';
