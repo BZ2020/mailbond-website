@@ -237,7 +237,7 @@
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Email bodies never stored — only scan metadata retained for your dashboard and audit log</span>
+              <span>Email bodies never stored — limited scan metadata retained up to 90 days for dashboard, audit log, and export</span>
             </li>
           </ul>
         </div>
@@ -465,11 +465,11 @@
         </details>
         <details class="faq-item">
           <summary>What data does MailBond access?</summary>
-          <p>MailBond uses the ReadItem permission only — it can read the currently selected email's content, links, attachments, and headers. It cannot access your mailbox, send emails, or modify anything. Email bodies are analyzed in memory and discarded after the scan; scan metadata (sender, subject, links, risk score) is retained to power your dashboard and audit log.</p>
+          <p>MailBond uses the ReadItem permission only — it can read the currently selected email's content, links, attachments, and headers. It cannot access your mailbox, send emails, or modify anything. Email bodies are analyzed in memory and discarded after the scan; limited scan metadata is retained for up to 90 days to power your dashboard, audit log, scan history, and export features.</p>
         </details>
         <details class="faq-item">
           <summary>Is MailBond suitable for regulated industries?</summary>
-          <p>Yes. MailBond was designed with financial institutions in mind. We provide audit logs, scan history exports, per-user analytics, and granular data retention controls. Email bodies are never stored; scan metadata is retained only for the duration of your subscription and can be deleted on request. Our infrastructure runs on Microsoft Azure, which maintains SOC 2 and ISO 27001 certifications for its platform.</p>
+          <p>Yes. MailBond was designed with financial institutions in mind. We provide audit logs, scan history exports, per-user analytics, and clear data retention controls. Email bodies are never stored; limited scan metadata is retained for up to 90 days, can be exported before purge, and can be deleted on request. Our infrastructure runs on Microsoft Azure, which maintains SOC 2 and ISO 27001 certifications for covered Azure services; MailBond does not currently hold its own SOC 2 attestation.</p>
         </details>
         <details class="faq-item">
           <summary>Can employees scan any email?</summary>

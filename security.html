@@ -47,7 +47,7 @@
   <section class="legal-page">
     <div class="container container-narrow">
       <h1>Security &amp; Trust</h1>
-      <p class="updated">Last updated: April 22, 2026</p>
+      <p class="updated">Last updated: April 29, 2026</p>
 
       <p class="lead">MailBond is built for organizations that handle sensitive information — financial institutions, legal teams, healthcare providers, and regulated enterprises. This page summarizes how we protect your data. Detailed security documentation, including our architecture overview, subprocessor data-flow breakdown, and Data Processing Agreement, is available to prospects and customers under NDA — contact <a href="mailto:admin@mailbond.us">admin@mailbond.us</a>.</p>
 
@@ -55,16 +55,16 @@
       <p>MailBond is designed to <strong>analyze</strong> email content without <strong>retaining</strong> it. When a user scans an email:</p>
       <ul>
         <li><strong>Email body content</strong> is processed in memory during the scan and is <strong>never written to persistent storage</strong>.</li>
-        <li><strong>Scan metadata</strong> — sender, recipient, subject, extracted URLs, attachment names and cryptographic hashes, and the resulting risk score — is stored so your dashboard, audit log, and scan history are available to your security team.</li>
+        <li><strong>Limited scan metadata</strong> — sender, recipient, subject, extracted URLs, attachment names and cryptographic hashes, and the resulting risk score — is retained for up to 90 days so your dashboard, audit log, scan history, and export features are available to your security team.</li>
         <li><strong>Anonymized threat intelligence</strong> (e.g., "this URL was observed as malicious") may be retained without customer identifiers to improve detection for all customers.</li>
       </ul>
-      <p>Full retention timelines are covered in our <a href="/privacy.html#data-retention">Privacy Policy</a>. Scan history can be deleted on request at any time.</p>
+      <p>Full retention timelines are covered in our <a href="/privacy.html#data-retention">Privacy Policy</a>. Authorized customer administrators can export scan history before the 90-day retention window expires, and scan history can be deleted on request at any time.</p>
 
       <h2>2. Encryption</h2>
       <ul>
         <li><strong>In transit:</strong> all traffic between the MailBond Outlook add-in, our API, and our infrastructure is encrypted using TLS 1.2 or higher.</li>
         <li><strong>At rest:</strong> all persisted data is stored on encrypted Azure-managed storage using AES-256.</li>
-        <li><strong>API authentication:</strong> each customer receives a unique API key scoped to their organization, with rate limiting and usage metering applied per key.</li>
+        <li><strong>API authentication:</strong> customer API keys are handled server-side, scoped to each organization, and protected with rate limiting and usage metering.</li>
       </ul>
 
       <h2>3. Access Controls</h2>
@@ -75,9 +75,9 @@
       </ul>
 
       <h2>4. Infrastructure</h2>
-      <p>MailBond is hosted entirely on Microsoft Azure (West US 3 region). Azure maintains SOC 2 Type II, ISO 27001, ISO 27017, ISO 27018, HIPAA, and PCI DSS certifications covering the underlying platform. Production systems run in isolated environments with automated backups, monitoring, and alerting.</p>
+      <p>MailBond is hosted entirely on Microsoft Azure (West US 3 region). Azure maintains SOC 2 Type II, ISO 27001, ISO 27017, ISO 27018, HIPAA, and PCI DSS certifications for covered Azure infrastructure and platform services. Production systems run in isolated environments with automated backups, monitoring, and alerting.</p>
       <div class="sec-callout">
-        <p><strong>A note on certifications.</strong> The certifications listed above are held by Microsoft Azure as our hosting provider. MailBond does not currently hold its own SOC 2 attestation; pursuing SOC 2 Type I is on our roadmap. We will state clearly when that changes.</p>
+        <p><strong>A note on certifications.</strong> The certifications listed above are held by Microsoft Azure as our hosting provider and represent inherited cloud-provider controls. MailBond does not currently hold its own SOC 2 attestation. We will state clearly when that changes.</p>
       </div>
 
       <h2>5. Subprocessors</h2>
@@ -89,6 +89,7 @@
         <tbody>
           <tr><td>Microsoft Azure</td><td>Cloud infrastructure (compute, storage, networking) and transactional email delivery via Microsoft Graph</td><td>United States</td></tr>
           <tr><td>Google Web Risk</td><td>URL reputation lookup for phishing detection</td><td>United States</td></tr>
+          <tr><td>PhishTank</td><td>Crowdsourced phishing URL reputation lookup</td><td>United States</td></tr>
           <tr><td>Stripe</td><td>Payment processing and subscription billing</td><td>United States</td></tr>
         </tbody>
       </table>

@@ -42,13 +42,13 @@
   <section class="legal-page">
     <div class="container container-narrow">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: April 22, 2026</p>
+      <p class="updated">Last updated: April 29, 2026</p>
 
       <p>MailBond ("we", "us", "our") operates the MailBond email security add-in for Microsoft Outlook and the website at <a href="https://mailbond.us">mailbond.us</a>. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.</p>
 
       <h2>1. Information We Collect</h2>
       <p><strong>Account Information:</strong> When you sign up or request a demo, we collect your name, work email address, company name, and number of users.</p>
-      <p><strong>Email Analysis Data:</strong> When you use the MailBond add-in to scan an email, we process email headers, sender information, recipient address, subject line, URLs, and attachment metadata to perform security analysis. We do <strong>not</strong> store the body text of emails. Scan metadata (sender, recipient, subject, extracted URLs, attachment names and hashes, and the resulting risk score) is retained so that your dashboard, audit logs, and threat history are available to your security team.</p>
+      <p><strong>Email Analysis Data:</strong> When you use the MailBond add-in to scan an email, we process email headers, sender information, recipient address, subject line, URLs, and attachment metadata to perform security analysis. We do <strong>not</strong> store the body text of emails. Limited scan metadata, including sender, recipient, subject, extracted URLs, attachment names and hashes, and the resulting risk score, is retained for a limited period so your dashboard, audit log, scan history, and export features are available to your security team.</p>
       <p><strong>Usage Data:</strong> We collect scan counts, feature usage, and error logs to improve our service.</p>
       <p><strong>Payment Information:</strong> Billing is handled by Stripe. We do not store credit card numbers. Stripe's privacy policy governs payment data processing.</p>
 
@@ -65,7 +65,8 @@
       <h2 id="data-retention">3. Data Retention</h2>
       <ul>
         <li><strong>Email bodies:</strong> never stored. Body content is processed in memory during analysis and discarded.</li>
-        <li><strong>Scan metadata</strong> (headers, sender, recipient, subject, extracted URLs, attachment names and hashes, risk score): retained for the duration of your active subscription to power your dashboard, audit log, and threat history.</li>
+        <li><strong>Scan metadata</strong> (headers, sender, recipient, subject, extracted URLs, attachment names and hashes, risk score): retained for up to 90 days to power your dashboard, audit log, scan history, and customer export features.</li>
+        <li><strong>Customer exports:</strong> authorized customer administrators can export scan history before the 90-day retention window expires.</li>
         <li><strong>URL reputation and anonymized threat intelligence</strong> (e.g., "this URL was seen as malicious" without customer identifiers): may be retained indefinitely to improve detection accuracy for all customers.</li>
         <li><strong>Account &amp; billing records:</strong> retained while your account is active and for up to 30 days after cancellation, after which personal data is deleted. Billing records required by law (e.g., tax records) are retained by Stripe per their policies.</li>
       </ul>
@@ -74,13 +75,14 @@
       <h2>4. Data Sharing</h2>
       <p>We do <strong>not</strong> sell your personal information. We share data only with:</p>
       <ul>
-        <li><strong>Google Safe Browsing / Web Risk API:</strong> URLs extracted from emails are checked against Google's threat databases</li>
+        <li><strong>Google Web Risk:</strong> URLs extracted from emails are checked against Google's threat databases</li>
+        <li><strong>PhishTank:</strong> URLs extracted from emails may be checked against PhishTank's crowdsourced phishing database</li>
         <li><strong>Stripe:</strong> For payment processing</li>
         <li><strong>Microsoft Azure:</strong> Our infrastructure provider, bound by their data processing agreements</li>
       </ul>
 
       <h2>5. Data Security</h2>
-      <p>We use industry-standard security measures including TLS 1.2+ encryption in transit, encrypted storage at rest, API key authentication, and role-based access controls. MailBond is hosted on Microsoft Azure, which maintains SOC 2, ISO 27001, and other compliance certifications for its infrastructure. These certifications apply to Azure as our hosting provider; MailBond does not currently hold its own SOC 2 attestation.</p>
+      <p>We use industry-standard security measures including TLS 1.2+ encryption in transit, encrypted storage at rest, server-side API key authentication, Microsoft Single Sign-On for customer dashboard access, and role-based administrative access controls. MailBond is hosted on Microsoft Azure, which maintains SOC 2, ISO 27001, and other compliance certifications for covered Azure infrastructure and platform services. These are inherited cloud-provider controls; MailBond does not currently hold its own SOC 2 attestation.</p>
 
       <h2>6. Microsoft Outlook Add-in Permissions</h2>
       <p>MailBond requests <strong>ReadItem</strong> permission only — the minimum permission required to analyze the currently open email. We <strong>cannot</strong> modify, delete, or send emails on your behalf.</p>
