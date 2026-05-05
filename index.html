@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MailBond — Email Security Intelligence for Microsoft Outlook</title>
-  <meta name="description" content="MailBond protects financial institutions and enterprises from phishing, BEC, and email-borne threats with real-time link analysis, attachment sandboxing, and AI-powered content intelligence — right inside Microsoft Outlook." />
-  <meta name="keywords" content="email security, phishing protection, Outlook add-in, BEC protection, financial institution security, email threat detection" />
+  <meta name="description" content="MailBond protects financial institutions and enterprises from phishing, BEC, QR-code phishing, look-alike domains, and image-only email lures with Outlook-native threat intelligence." />
+  <meta name="keywords" content="email security, phishing protection, QR phishing, quishing detection, Outlook add-in, BEC protection, OCR phishing detection, look-alike domain detection" />
   <meta property="og:title" content="MailBond — Email Security Intelligence for Microsoft Outlook" />
-  <meta property="og:description" content="Real-time phishing detection, attachment sandboxing, and AI-powered threat analysis — deployed in minutes, not months." />
+  <meta property="og:description" content="Real-time phishing, QR-code, OCR, look-alike-domain, attachment, and social-engineering analysis inside Microsoft Outlook — deployed in minutes." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mailbond.us" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,16 +45,16 @@
     <div class="hero-bg"></div>
     <div class="container hero-inner">
       <div class="hero-badge">Trusted by Financial Institutions</div>
-      <h1>Stop Phishing Attacks<br/>Before They Reach Your Team</h1>
-      <p class="hero-sub">MailBond adds real-time threat intelligence directly inside Microsoft Outlook — scanning every link, attachment, and sender in seconds. No infrastructure changes. Deploy in minutes.</p>
+      <h1>Catch the Phishing Attacks<br/>Gateways Miss</h1>
+      <p class="hero-sub">MailBond adds real-time threat intelligence directly inside Microsoft Outlook — scanning links, attachments, QR codes, image-only lures, sender authentication, and look-alike domains in seconds. No MX changes. Deploy in minutes.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary btn-lg">Request a Demo</a>
         <a href="#how-it-works" class="btn btn-outline btn-lg">See How It Works</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <span class="hero-stat-number">8</span>
-          <span class="hero-stat-label">Detection Layers</span>
+          <span class="hero-stat-number">QR</span>
+          <span class="hero-stat-label">Quishing Detection</span>
         </div>
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
@@ -64,7 +64,7 @@
         <div class="hero-stat-divider"></div>
         <div class="hero-stat">
           <span class="hero-stat-number">0</span>
-          <span class="hero-stat-label">Infrastructure Changes</span>
+          <span class="hero-stat-label">MX Changes</span>
         </div>
       </div>
     </div>
@@ -76,7 +76,7 @@
       <div class="section-header">
         <span class="section-tag">The Problem</span>
         <h2>Email Is Still the #1 Attack Vector</h2>
-        <p class="section-sub">91% of cyberattacks begin with a phishing email. Financial institutions face increasingly sophisticated threats that bypass traditional gateway filters.</p>
+        <p class="section-sub">91% of cyberattacks begin with a phishing email. Financial institutions now face QR-code phishing, image-only lures, brand look-alikes, and social-engineering attacks that bypass traditional gateway filters.</p>
       </div>
       <div class="problem-grid">
         <div class="problem-card">
@@ -109,8 +109,8 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag tag-light">Capabilities</span>
-        <h2>Eight Layers of Email Threat Detection</h2>
-        <p class="section-sub">MailBond doesn't rely on a single technique. Every email is analyzed through multiple independent detection engines working in parallel.</p>
+        <h2>Eight Layers of Modern Email Threat Detection</h2>
+        <p class="section-sub">MailBond doesn't rely on a single technique. Every scan runs independent detection engines for links, QR codes, image text, sender authentication, social engineering, and visual risk explanation.</p>
       </div>
       <div class="features-grid">
         <div class="feature-card">
@@ -118,14 +118,14 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
           </div>
           <h3>Real-Time Link Analysis</h3>
-          <p>Every URL is unwrapped, resolved through its full redirect chain, and scored against heuristic risk models and Google Web Risk.</p>
+          <p>Every URL is unwrapped, normalized, resolved through redirects, and scored against heuristics, Google Web Risk, PhishTank, and look-alike-domain detection.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
           </div>
-          <h3>Attachment Sandboxing</h3>
-          <p>Suspicious files are detonated in an isolated cloud sandbox. PDFs, Office documents, and executables are analyzed for hidden threats.</p>
+          <h3>QR / Quishing Detection</h3>
+          <p>QR and barcode payloads are decoded from image attachments and rendered email-body screenshots, then URL-shaped payloads are checked like any other link.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
@@ -139,35 +139,35 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
           </div>
           <h3>Sender IP Reputation</h3>
-          <p>Originating IPs are checked against Spamhaus, SpamCop, and Barracuda blacklists to flag messages from known-bad infrastructure.</p>
+          <p>Originating IPs are checked against Spamhaus, SpamCop, and Barracuda blocklists to flag messages from known-bad infrastructure.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
           </div>
-          <h3>Content Intelligence</h3>
-          <p>AI-powered NLP detects urgency manipulation, authority impersonation, and social engineering patterns commonly used in BEC attacks.</p>
+          <h3>Content + OCR Intelligence</h3>
+          <p>Social-engineering heuristics detect urgency, invoice pressure, brand impersonation, and forwarded lures; OCR surfaces text and URLs hidden inside images.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
           </div>
-          <h3>PhishTank Integration</h3>
-          <p>Every extracted URL is cross-referenced against PhishTank's crowdsourced phishing database for known-threat identification.</p>
+          <h3>Known Phish Intelligence</h3>
+          <p>Extracted URLs, OCR-discovered URLs, and QR-decoded URLs are checked against PhishTank and Google Web Risk without sending email bodies or attachments.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           </div>
-          <h3>Visual Email Mapping</h3>
-          <p>Annotated screenshots highlight every link with color-coded risk badges, giving analysts instant visual context for triage.</p>
+          <h3>Risk Bubble Explanation</h3>
+          <p>Dangerous flags appear as bold red bubbles, suspicious indicators as orange bubbles, and low-context observations as gray chips so users see why an email is risky.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
           </div>
           <h3>Enterprise Dashboard</h3>
-          <p>Real-time analytics, scan history, risk trends, and per-user threat visibility — accessible to security teams and compliance officers.</p>
+          <p>Security teams see scan history, risk trends, per-user activity, org-wide sender blocks, and customer exports for compliance and response workflows.</p>
         </div>
       </div>
     </div>
@@ -193,7 +193,7 @@
         <div class="step-card">
           <div class="step-number">2</div>
           <h3>MailBond Analyzes Everything</h3>
-          <p>Links are unwrapped and scanned. Attachments are sandboxed. Headers are verified. Content is analyzed for social engineering. All in parallel.</p>
+          <p>Links are unwrapped. QR codes are decoded. Image text is OCR scanned. Attachments are sandboxed. Headers are verified. Content is analyzed for social engineering.</p>
         </div>
         <div class="step-connector">
           <svg width="40" height="24" viewBox="0 0 40 24"><path d="M0 12h32m0 0l-6-6m6 6l-6 6" stroke="#00d4aa" stroke-width="2" fill="none"/></svg>
@@ -201,7 +201,7 @@
         <div class="step-card">
           <div class="step-number">3</div>
           <h3>Clear Risk Report Delivered</h3>
-          <p>A detailed security report appears with a 0-100 risk score, color-coded link analysis, authentication verification, and an annotated visual map of the email.</p>
+          <p>A clear report appears with a 0-100 score, red/orange/gray risk bubbles, decoded QR payloads, link verdicts, authentication results, and a visual map of the email.</p>
         </div>
       </div>
     </div>
@@ -237,7 +237,7 @@
             </li>
             <li>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              <span>Email bodies never stored — limited scan metadata retained up to 90 days for dashboard, audit log, and export</span>
+              <span>Ephemeral request processing — email bodies, attachments, screenshots, OCR text, and QR payloads are destroyed after analysis</span>
             </li>
           </ul>
         </div>
@@ -259,9 +259,9 @@
           <div class="flow-arrow">&#8595;</div>
           <div class="flow-box-row">
             <div class="flow-box flow-box-engine">Web Risk</div>
-            <div class="flow-box flow-box-engine">Sandbox</div>
+            <div class="flow-box flow-box-engine">QR + OCR</div>
             <div class="flow-box flow-box-engine">DNSBL</div>
-            <div class="flow-box flow-box-engine">NLP</div>
+            <div class="flow-box flow-box-engine">Look-alike</div>
           </div>
         </div>
       </div>
@@ -324,7 +324,25 @@
               <td><span class="cross">&#10007;</span></td>
             </tr>
             <tr>
-              <td>Visual email threat map</td>
+              <td>QR / quishing detection</td>
+              <td><span class="check">&#10003;</span></td>
+              <td><span class="cross">&#10007;</span></td>
+              <td><span class="partial">Varies</span></td>
+            </tr>
+            <tr>
+              <td>OCR for image-only lures</td>
+              <td><span class="check">&#10003;</span></td>
+              <td><span class="partial">Partial</span></td>
+              <td><span class="partial">Partial</span></td>
+            </tr>
+            <tr>
+              <td>Look-alike-domain detection</td>
+              <td><span class="check">&#10003;</span></td>
+              <td><span class="partial">Partial</span></td>
+              <td><span class="partial">Partial</span></td>
+            </tr>
+            <tr>
+              <td>Visual risk bubbles for users</td>
               <td><span class="check">&#10003;</span></td>
               <td><span class="cross">&#10007;</span></td>
               <td><span class="cross">&#10007;</span></td>
@@ -340,6 +358,12 @@
               <td><span class="check">&#10003;</span></td>
               <td><span class="check">&#10003;</span></td>
               <td><span class="cross">&#10007;</span></td>
+            </tr>
+            <tr>
+              <td>Org-wide sender block from admin dashboard</td>
+              <td><span class="check">&#10003;</span></td>
+              <td><span class="partial">Policy-dependent</span></td>
+              <td><span class="check">&#10003;</span></td>
             </tr>
             <tr>
               <td>Works alongside existing security stack</td>
@@ -374,7 +398,7 @@
           <div class="pricing-desc">For small teams and growing organizations</div>
           <ul class="pricing-features">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Up to 50 users</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> All 8 detection layers</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Core link, sender, and risk-bubble analysis</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Customer dashboard</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Email support</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Microsoft SSO</li>
@@ -388,10 +412,10 @@
           <div class="pricing-desc">For organizations with serious security requirements</div>
           <ul class="pricing-features">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Unlimited users</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> All 8 detection layers</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Full QR, OCR, attachment, and look-alike analysis</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Advanced analytics</li>
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Blocked sender management</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Company-wide blocked sender management</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Scan history &amp; analytics</li>
           </ul>
           <a href="#contact" class="btn btn-primary btn-block">Get Started</a>
@@ -423,7 +447,7 @@
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <h3>Built for Compliance</h3>
-          <p>Designed with regulated teams in mind. Audit logs, 90-day scan history, customer exports, and per-user reporting help support security and examiner inquiries.</p>
+          <p>Designed with regulated teams in mind. Audit logs, 90-day minimized scan history, customer exports, and per-user reporting help support security and examiner inquiries.</p>
         </div>
         <div class="trust-card">
           <div class="trust-icon">
@@ -436,8 +460,8 @@
           <div class="trust-icon">
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0a1628" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
-          <h3>Zero End-User Training</h3>
-          <p>One button in the Outlook toolbar. No new apps to install, no passwords to remember, no workflow disruption. Your team already knows how to use it.</p>
+          <h3>Clear User Guidance</h3>
+          <p>One Outlook button returns a plain-language report with red, orange, and gray risk bubbles. Users understand the concern without reading a security report.</p>
         </div>
       </div>
     </div>
@@ -465,11 +489,11 @@
         </details>
         <details class="faq-item">
           <summary>What data does MailBond access?</summary>
-          <p>MailBond uses the ReadItem permission only — it can read the currently selected email's content, links, attachments, and headers. It cannot access your mailbox, send emails, or modify anything. Email bodies are analyzed in memory and discarded after the scan; limited scan metadata is retained for up to 90 days to power your dashboard, audit log, scan history, and export features.</p>
+          <p>MailBond uses the ReadItem permission only — it can read the currently selected email's content, links, attachments, and headers. It cannot access your mailbox, send emails, or modify anything. Each scan request is ephemeral: content is validated, analyzed, returned as a verdict, and destroyed. Only minimized scan metadata is retained for up to 90 days to power your dashboard, audit log, scan history, and export features.</p>
         </details>
         <details class="faq-item">
           <summary>Is MailBond suitable for regulated industries?</summary>
-          <p>Yes. MailBond was designed with financial institutions in mind. We provide audit logs, scan history exports, per-user analytics, and clear data retention controls. Email bodies are never stored; limited scan metadata is retained for up to 90 days, can be exported before purge, and can be deleted on request. Our infrastructure runs on Microsoft Azure, which maintains SOC 2 and ISO 27001 certifications for covered Azure services; MailBond does not currently hold its own SOC 2 attestation.</p>
+          <p>Yes. MailBond was designed with financial institutions in mind. We provide audit logs, scan history exports, per-user analytics, org-wide sender controls, and clear data retention controls. Request content is not persisted; minimized scan metadata is retained for up to 90 days, can be exported before purge, and can be deleted on request. Our infrastructure runs on Microsoft Azure, which maintains SOC 2 and ISO 27001 certifications for covered Azure services; MailBond does not currently hold its own SOC 2 attestation.</p>
         </details>
         <details class="faq-item">
           <summary>Can employees scan any email?</summary>

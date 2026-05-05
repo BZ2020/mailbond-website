@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Security &amp; Trust — MailBond</title>
-  <meta name="description" content="How MailBond protects customer data: encryption, access controls, data retention, subprocessors, and responsible disclosure." />
+  <meta name="description" content="How MailBond protects customer data with ephemeral request processing, encryption, access controls, data minimization, subprocessors, and responsible disclosure." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -47,15 +47,15 @@
   <section class="legal-page">
     <div class="container container-narrow">
       <h1>Security &amp; Trust</h1>
-      <p class="updated">Last updated: April 29, 2026</p>
+      <p class="updated">Last updated: May 5, 2026</p>
 
       <p class="lead">MailBond is built for organizations that handle sensitive information — financial institutions, legal teams, healthcare providers, and regulated enterprises. This page summarizes how we protect your data. Detailed security documentation, including our architecture overview, subprocessor data-flow breakdown, and Data Processing Agreement, is available to prospects and customers under NDA — contact <a href="mailto:admin@mailbond.us">admin@mailbond.us</a>.</p>
 
       <h2>1. Data We Process vs. Data We Store</h2>
-      <p>MailBond is designed to <strong>analyze</strong> email content without <strong>retaining</strong> it. When a user scans an email:</p>
+      <p>MailBond is designed to <strong>analyze</strong> email content without <strong>retaining</strong> the request content. Each scan is ephemeral: the request is validated, analyzed, returned as a verdict, and then destroyed. When a user scans an email:</p>
       <ul>
-        <li><strong>Email body content</strong> is processed in memory during the scan and is <strong>never written to persistent storage</strong>.</li>
-        <li><strong>Limited scan metadata</strong> — sender, recipient, subject, extracted URLs, attachment names and cryptographic hashes, and the resulting risk score — is retained for up to 90 days so your dashboard, audit log, scan history, and export features are available to your security team.</li>
+        <li><strong>Request content</strong> — email body, attachments, screenshots, OCR text, and decoded QR/barcode payloads — is processed for the scan and is <strong>not written to persistent storage</strong>.</li>
+        <li><strong>Limited scan metadata</strong> — sender, recipient, subject, extracted URLs, attachment names and cryptographic hashes, source counts, and the resulting risk score — is retained for up to 90 days so your dashboard, audit log, scan history, and export features are available to your security team.</li>
         <li><strong>Anonymized threat intelligence</strong> (e.g., "this URL was observed as malicious") may be retained without customer identifiers to improve detection for all customers.</li>
       </ul>
       <p>Full retention timelines are covered in our <a href="/privacy.html#data-retention">Privacy Policy</a>. Authorized customer administrators can export scan history before the 90-day retention window expires, and scan history can be deleted on request at any time.</p>
@@ -71,6 +71,7 @@
       <ul>
         <li><strong>Outlook permission scope:</strong> the MailBond add-in requests <strong>ReadItem</strong> permission only — the minimum needed to analyze the currently open email. MailBond cannot read other messages, modify mail, or send on your behalf.</li>
         <li><strong>Customer authentication:</strong> administrators sign in to the customer dashboard using Microsoft Single Sign-On. No separate MailBond passwords to manage.</li>
+        <li><strong>Organization-wide controls:</strong> customer administrators can block senders for the whole company through the customer dashboard. Blocks are scoped to the customer's API key, not to a single recipient.</li>
         <li><strong>Internal access:</strong> production systems and customer data are accessible only to a small number of authorized engineers, following least-privilege principles and audited access.</li>
       </ul>
 
@@ -80,7 +81,10 @@
         <p><strong>A note on certifications.</strong> The certifications listed above are held by Microsoft Azure as our hosting provider and represent inherited cloud-provider controls. MailBond does not currently hold its own SOC 2 attestation. We will state clearly when that changes.</p>
       </div>
 
-      <h2>5. Subprocessors</h2>
+      <h2>5. Current Detection Safeguards</h2>
+      <p>MailBond's current analysis pipeline includes link reputation, sender authentication, DNS blocklist checks, social-engineering heuristics, attachment analysis, OCR for image-only lures, QR/barcode decoding for quishing attempts, and look-alike-domain detection for brand impersonation. Results are presented to users with severity-colored risk bubbles: red for dangerous indicators, orange for suspicious medium-risk indicators, and gray for low-context observations.</p>
+
+      <h2>6. Subprocessors</h2>
       <p>We use the following third-party services to operate MailBond. Each is bound by its own security and privacy commitments, and we only share the minimum data necessary for each vendor's function.</p>
       <table class="sec-table">
         <thead>
@@ -88,20 +92,20 @@
         </thead>
         <tbody>
           <tr><td>Microsoft Azure</td><td>Cloud infrastructure (compute, storage, networking) and transactional email delivery via Microsoft Graph</td><td>United States</td></tr>
-          <tr><td>Google Web Risk</td><td>URL reputation lookup for phishing detection</td><td>United States</td></tr>
-          <tr><td>PhishTank</td><td>Crowdsourced phishing URL reputation lookup</td><td>United States</td></tr>
+          <tr><td>Google Web Risk</td><td>URL reputation lookup for extracted, OCR-discovered, and QR-decoded URLs. No email body, attachment bytes, screenshots, or customer identifiers are sent.</td><td>United States</td></tr>
+          <tr><td>PhishTank</td><td>Crowdsourced phishing URL reputation lookup for extracted, OCR-discovered, and QR-decoded URLs. No email body, attachment bytes, screenshots, or customer identifiers are sent.</td><td>United States</td></tr>
           <tr><td>Stripe</td><td>Payment processing and subscription billing</td><td>United States</td></tr>
         </tbody>
       </table>
       <p>A detailed breakdown of exactly which data fields are shared with each subprocessor is available in our security documentation package on request.</p>
 
-      <h2>6. Data Processing Agreement</h2>
+      <h2>7. Data Processing Agreement</h2>
       <p>A Data Processing Agreement (DPA) covering controller/processor responsibilities, breach notification, subprocessor changes, data subject rights, and international data transfers is available for qualified customers. Request a copy by emailing <a href="mailto:admin@mailbond.us">admin@mailbond.us</a>.</p>
 
-      <h2>7. Incident Response</h2>
+      <h2>8. Incident Response</h2>
       <p>We maintain an internal incident response procedure covering detection, containment, customer notification, and post-incident review. In the event of a security incident that affects customer data, we will notify affected customers without undue delay and within the timeframe required by applicable law and contract.</p>
 
-      <h2>8. Responsible Disclosure</h2>
+      <h2>9. Responsible Disclosure</h2>
       <p>We welcome reports from security researchers. If you believe you have found a vulnerability in MailBond, please email <a href="mailto:security@mailbond.us">security@mailbond.us</a> with details. We commit to:</p>
       <ul>
         <li>Acknowledging your report within 3 business days.</li>
@@ -109,18 +113,19 @@
         <li>Not pursuing legal action against researchers who act in good faith, do not disrupt our service, and do not access customer data beyond what is necessary to demonstrate the issue.</li>
       </ul>
 
-      <h2>9. Requesting the Full Security Package</h2>
+      <h2>10. Requesting the Full Security Package</h2>
       <p>For prospects and customers evaluating MailBond for regulated environments, we provide a detailed security package under NDA that includes:</p>
       <ul>
         <li>Architecture overview with data-flow diagrams</li>
         <li>Subprocessor data-sharing breakdown (field-level)</li>
+        <li>Ephemeral request processing and data-minimization summary</li>
         <li>Data Processing Agreement</li>
         <li>Completed CAIQ / SIG Lite questionnaire (as available)</li>
         <li>Vulnerability management and SDLC summary</li>
       </ul>
       <p>Contact <a href="mailto:admin@mailbond.us">admin@mailbond.us</a> to begin the NDA and documentation exchange.</p>
 
-      <h2>10. Contact</h2>
+      <h2>11. Contact</h2>
       <p>
         General security inquiries: <a href="mailto:admin@mailbond.us">admin@mailbond.us</a><br>
         Vulnerability disclosure: <a href="mailto:security@mailbond.us">security@mailbond.us</a>
