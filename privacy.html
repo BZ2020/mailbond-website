@@ -42,7 +42,7 @@
   <section class="legal-page">
     <div class="container container-narrow">
       <h1>Privacy Policy</h1>
-      <p class="updated">Last updated: May 5, 2026</p>
+      <p class="updated">Last updated: June 28, 2026</p>
 
       <p>MailBond LLC, a California limited liability company ("MailBond", "we", "us", "our"), operates the MailBond™ email security add-in for Microsoft Outlook and the website at <a href="https://mailbond.us">mailbond.us</a>. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services.</p>
 
@@ -78,11 +78,12 @@
         <li><strong>Google Web Risk:</strong> URLs extracted from emails, discovered by OCR, or decoded from QR/barcodes are checked against Google's threat databases. We do not send email bodies, attachments, screenshots, or customer identifiers to Google Web Risk.</li>
         <li><strong>PhishTank:</strong> URLs extracted from emails, discovered by OCR, or decoded from QR/barcodes may be checked against PhishTank's crowdsourced phishing database. We do not send email bodies, attachments, screenshots, or customer identifiers to PhishTank.</li>
         <li><strong>Stripe:</strong> For payment processing</li>
+        <li><strong>Microsoft Entra ID / Microsoft identity services:</strong> For customer dashboard authentication and optional Microsoft sign-in flows. We do not maintain separate MailBond dashboard passwords.</li>
         <li><strong>Microsoft Azure:</strong> Our infrastructure provider, bound by their data processing agreements</li>
       </ul>
 
       <h2>5. Data Security</h2>
-      <p>We use industry-standard security measures including TLS 1.2+ encryption in transit, encrypted storage at rest, server-side API key authentication, Microsoft Single Sign-On for customer dashboard access, and role-based administrative access controls. MailBond is hosted on Microsoft Azure, which maintains SOC 2, ISO 27001, and other compliance certifications for covered Azure infrastructure and platform services. These are inherited cloud-provider controls; MailBond does not currently hold its own SOC 2 attestation.</p>
+      <p>We use industry-standard security measures including TLS 1.2+ encryption in transit, encrypted storage at rest, server-side customer authentication, Microsoft identity services for customer dashboard access, and role-based administrative access controls. MailBond is hosted on Microsoft Azure, which maintains SOC 2, ISO 27001, and other compliance certifications for covered Azure infrastructure and platform services. These are inherited cloud-provider controls; MailBond does not currently hold its own SOC 2 attestation.</p>
 
       <h2>6. Microsoft Outlook Add-in Permissions</h2>
       <p>MailBond requests <strong>ReadItem</strong> permission only — the minimum permission required to analyze the currently open email. We <strong>cannot</strong> modify, delete, or send emails on your behalf, and we cannot browse other mailbox items.</p>
@@ -129,6 +130,9 @@
     <div class="container">
       <div class="footer-bottom">
         <p>&copy; 2026 MailBond LLC. MailBond™ is a trademark of MailBond LLC. USPTO Serial No. 99836871. All rights reserved. · <a href="/privacy.html">Privacy Policy</a> · <a href="/security.html">Security</a></p>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>
