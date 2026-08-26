@@ -55,8 +55,9 @@
       <p>MailBond is designed to <strong>analyze</strong> email content without <strong>retaining</strong> the request content. Each scan is ephemeral: the request is validated, analyzed, returned as a verdict, and then destroyed. When a user scans an email:</p>
       <ul>
         <li><strong>Request content</strong> — email body, attachments, screenshots, OCR text, and decoded QR/barcode payloads — is processed for the scan and is <strong>not written to persistent storage</strong>.</li>
-        <li><strong>Minimized scan metadata</strong> — timestamp, tier, risk score, link and attachment counts, sender and recipient domains, and available sender IP — is retained for up to 90 days so dashboard, audit-log, scan-history, and export features are available to your security team.</li>
-        <li><strong>Message-specific details</strong> — subjects, URLs, attachment names and content, headers, screenshots, OCR text, and decoded QR/barcode payloads — are not persisted in production scan logs.</li>
+        <li><strong>Minimized scan metadata</strong> — timestamp, tier, risk score, primary risk reason, attachment count, sender and recipient domains, and available public sender mail-relay IP — is retained for up to 90 days so dashboard, audit-log, scan-history, and export features are available to your security team.</li>
+        <li><strong>Optional address detail</strong> — an authorized tenant administrator may explicitly retain encrypted full sender and recipient addresses for 7 or 30 days, with bounded manual or automatic extensions up to one year. Expired addresses are permanently scrubbed, and disabling the setting immediately removes retained full addresses.</li>
+        <li><strong>Message-specific details</strong> — subjects, URLs, attachment names and content, headers, screenshots, OCR text, and decoded QR/barcode payloads — are never persisted in production scan logs.</li>
       </ul>
       <p>Full retention timelines are covered in our <a href="/privacy.html#data-retention">Privacy Policy</a>. Authorized customer administrators can export scan history before the 90-day retention window expires, and scan history can be deleted on request at any time.</p>
 
@@ -96,6 +97,7 @@
           <tr><td>Microsoft Entra ID / Microsoft identity services</td><td>Required Office SSO for Outlook browser requests and Microsoft sign-in for customer dashboard access. MailBond does not maintain separate user or dashboard passwords.</td><td>Microsoft cloud regions</td></tr>
           <tr><td>Google Web Risk</td><td>URL reputation lookup for extracted, OCR-discovered, and QR-decoded URLs. No email body, attachment bytes, screenshots, or customer identifiers are sent.</td><td>United States</td></tr>
           <tr><td>PhishTank</td><td>Crowdsourced phishing URL reputation lookup for extracted, OCR-discovered, and QR-decoded URLs. No email body, attachment bytes, screenshots, or customer identifiers are sent.</td><td>United States</td></tr>
+          <tr><td>IPWho</td><td>On-demand approximate geolocation and network attribution for a validated public sender mail-relay IP when an authorized tenant administrator views scan history. No email content or customer identifier is sent.</td><td>Global service</td></tr>
           <tr><td>Stripe</td><td>Payment processing and subscription billing</td><td>United States</td></tr>
         </tbody>
       </table>
