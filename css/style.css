@@ -387,6 +387,14 @@ img { max-width: 100%; display: block; }
 .form-group + .form-group { margin-bottom: 0; }
 .contact-form .btn { margin-top: 24px; }
 .form-note { text-align: center; font-size: 13px; color: var(--gray-500); margin-top: 16px; }
+.contact-form-success {
+  min-height: 312px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+}
+.contact-form-success[hidden] { display: none; }
+.contact-form-success h3 { color: var(--white); font-size: 32px; margin-bottom: 12px; }
+.contact-form-success p { color: var(--gray-300); font-size: 16px; line-height: 1.7; max-width: 520px; }
+.contact-form-success:focus { outline: none; }
 
 /* ---------- Footer ---------- */
 .footer { background: var(--navy); color: var(--gray-400); padding: 64px 0 32px; border-top: 1px solid rgba(255,255,255,.06); }

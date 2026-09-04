@@ -114,16 +114,11 @@
             throw new Error('personal_email');
           }
           if (!res.ok) throw new Error('Request failed');
-          btn.textContent = 'Demo Requested!';
-          btn.style.background = '#10b981';
-          btn.style.borderColor = '#10b981';
           form.reset();
-          setTimeout(function () {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            btn.style.borderColor = '';
-            btn.disabled = false;
-          }, 3000);
+          form.querySelector('.contact-form-fields').hidden = true;
+          var confirmation = form.querySelector('.contact-form-success');
+          confirmation.hidden = false;
+          confirmation.focus();
         })
         .catch(function (err) {
           if (err.message === 'personal_email') {
