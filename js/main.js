@@ -97,7 +97,7 @@
         return;
       }
 
-      fetch('https://mailbond-api-hqc0h2g7b2abfhab.westus3-01.azurewebsites.net/api/demo-request', {
+      fetch('https://api.mailbond.us/api/demo-request', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
