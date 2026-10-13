@@ -64,6 +64,12 @@
           var value = element.getAttribute('data-' + period);
           if (value !== null) element.textContent = value;
         });
+        document.querySelectorAll('.pricing-onboarding-link').forEach(function (link) {
+          var plan = link.getAttribute('data-plan');
+          link.href = 'https://dashboard.mailbond.us/dashboard/onboarding?tier=' +
+            encodeURIComponent(plan) + '&billing=' + encodeURIComponent(period === 'annual' ? 'year' : 'month') +
+            '&users=5';
+        });
       });
     });
   }
