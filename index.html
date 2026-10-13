@@ -388,16 +388,25 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag tag-light">Pricing</span>
-        <h2>Simple, Transparent Pricing</h2>
-        <p class="section-sub">No hidden fees. No per-incident charges. Predictable cost that scales with your organization.</p>
+        <h2>Organization Plans</h2>
+        <p class="section-sub">Simple per-user pricing with a five-user minimum. Save the cost of two months when billed annually.</p>
+        <div class="billing-toggle" role="group" aria-label="Billing frequency">
+          <button class="billing-toggle-option" type="button" data-billing-period="monthly" aria-pressed="false">Monthly</button>
+          <button class="billing-toggle-option active" type="button" data-billing-period="annual" aria-pressed="true">
+            Annual <span>2 months free</span>
+          </button>
+        </div>
       </div>
       <div class="pricing-grid">
         <div class="pricing-card">
           <div class="pricing-tier">Starter</div>
-          <div class="pricing-price"><span class="pricing-currency">$</span>3<span class="pricing-period">/user/mo</span></div>
+          <div class="pricing-price">
+            <span class="pricing-currency">$</span><span class="pricing-amount" data-monthly="3" data-annual="30">30</span><span class="pricing-period" data-monthly="/user/mo" data-annual="/user/yr">/user/yr</span>
+          </div>
+          <div class="pricing-billing-note" data-monthly="$15/month minimum for 5 users" data-annual="$150/year minimum for 5 users">$150/year minimum for 5 users</div>
           <div class="pricing-desc">For small teams and growing organizations</div>
           <ul class="pricing-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Up to 50 users</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5 to 50 users</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Core link and sender-risk analysis</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Customer dashboard</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Email support</li>
@@ -408,10 +417,13 @@
         <div class="pricing-card pricing-card-featured">
           <div class="pricing-badge">Most Popular</div>
           <div class="pricing-tier">Business</div>
-          <div class="pricing-price"><span class="pricing-currency">$</span>5<span class="pricing-period">/user/mo</span></div>
+          <div class="pricing-price">
+            <span class="pricing-currency">$</span><span class="pricing-amount" data-monthly="5" data-annual="50">50</span><span class="pricing-period" data-monthly="/user/mo" data-annual="/user/yr">/user/yr</span>
+          </div>
+          <div class="pricing-billing-note" data-monthly="$25/month minimum for 5 users" data-annual="$250/year minimum for 5 users">$250/year minimum for 5 users</div>
           <div class="pricing-desc">For organizations with serious security requirements</div>
           <ul class="pricing-features">
-            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Unlimited users</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5-user minimum, no maximum</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Full QR, OCR, attachment, safe preview, and look-alike analysis</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Priority support</li>
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Advanced analytics</li>
@@ -423,6 +435,7 @@
         <div class="pricing-card">
           <div class="pricing-tier">Enterprise</div>
           <div class="pricing-price"><span class="pricing-custom">Custom</span></div>
+          <div class="pricing-billing-note">Five-user minimum</div>
           <div class="pricing-desc">For regulated industries with specific requirements</div>
           <ul class="pricing-features">
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Everything in Business</li>

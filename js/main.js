@@ -49,6 +49,25 @@
     });
   });
 
+  // ---------- Pricing Billing Toggle ----------
+  var billingOptions = document.querySelectorAll('[data-billing-period]');
+  if (billingOptions.length) {
+    billingOptions.forEach(function (option) {
+      option.addEventListener('click', function () {
+        var period = option.getAttribute('data-billing-period');
+        billingOptions.forEach(function (candidate) {
+          var selected = candidate === option;
+          candidate.classList.toggle('active', selected);
+          candidate.setAttribute('aria-pressed', selected ? 'true' : 'false');
+        });
+        document.querySelectorAll('.pricing-amount, .pricing-period, .pricing-billing-note').forEach(function (element) {
+          var value = element.getAttribute('data-' + period);
+          if (value !== null) element.textContent = value;
+        });
+      });
+    });
+  }
+
   // ---------- Contact Form ----------
   var form = document.getElementById('contact-form');
   if (form) {
