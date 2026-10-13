@@ -388,8 +388,12 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag tag-light">Pricing</span>
-        <h2>Organization Plans</h2>
-        <p class="section-sub">Simple per-user pricing with a five-user minimum. Save the cost of two months when billed annually.</p>
+        <h2 id="pricing-heading">Personal Plan</h2>
+        <p class="section-sub" id="pricing-subtitle">Protect one personal Outlook account. Start with 10 free scans and save the cost of two months when billed annually.</p>
+        <div class="billing-toggle" role="group" aria-label="Account type">
+          <button class="billing-toggle-option active" type="button" data-pricing-audience="personal" aria-pressed="true">Personal</button>
+          <button class="billing-toggle-option" type="button" data-pricing-audience="organization" aria-pressed="false">Organizations</button>
+        </div>
         <div class="billing-toggle" role="group" aria-label="Billing frequency">
           <button class="billing-toggle-option" type="button" data-billing-period="monthly" aria-pressed="false">Monthly</button>
           <button class="billing-toggle-option active" type="button" data-billing-period="annual" aria-pressed="true">
@@ -397,7 +401,26 @@
           </button>
         </div>
       </div>
-      <div class="pricing-grid">
+      <div class="pricing-grid pricing-grid-personal" data-pricing-panel="personal">
+        <div class="pricing-card pricing-card-featured">
+          <div class="pricing-badge">10 free scans</div>
+          <div class="pricing-tier">Personal</div>
+          <div class="pricing-price">
+            <span class="pricing-currency">$</span><span class="pricing-amount" data-monthly="4.99" data-annual="49.90">49.90</span><span class="pricing-period" data-monthly="/mo" data-annual="/yr">/yr</span>
+          </div>
+          <div class="pricing-billing-note" data-monthly="$4.99 billed monthly" data-annual="$49.90 billed annually · two months free">$49.90 billed annually · two months free</div>
+          <div class="pricing-desc">For one personal Outlook.com, Hotmail, or Live account</div>
+          <ul class="pricing-features">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 10 free scans before payment</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 100 scans each paid billing period</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Full link, sender, QR, attachment, and look-alike analysis</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Secure cancellation and payment management</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00d4aa" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Downloadable invoices and receipts</li>
+          </ul>
+          <a href="https://dashboard.mailbond.us/dashboard/personal?billing=year" class="btn btn-primary btn-block pricing-personal-link">Start 10 Free Scans</a>
+        </div>
+      </div>
+      <div class="pricing-grid" data-pricing-panel="organization" hidden>
         <div class="pricing-card">
           <div class="pricing-tier">Starter</div>
           <div class="pricing-price">
@@ -514,7 +537,7 @@
         </details>
         <details class="faq-item">
           <summary>How is pricing calculated?</summary>
-          <p>Organization pricing is per user with a five-user minimum. Choose monthly billing or save the cost of two months with annual billing. Volume discounts are available for organizations with 200+ users.</p>
+          <p>Personal pricing covers one Microsoft account with 100 scans per paid billing period. Organization pricing is per user with a five-user minimum. Both offer monthly billing or two months free with annual billing. Volume discounts are available for organizations with 200+ users.</p>
         </details>
       </div>
     </div>

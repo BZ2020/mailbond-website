@@ -50,6 +50,31 @@
   });
 
   // ---------- Pricing Billing Toggle ----------
+  var audienceOptions = document.querySelectorAll('[data-pricing-audience]');
+  if (audienceOptions.length) {
+    audienceOptions.forEach(function (option) {
+      option.addEventListener('click', function () {
+        var audience = option.getAttribute('data-pricing-audience');
+        audienceOptions.forEach(function (candidate) {
+          var selected = candidate === option;
+          candidate.classList.toggle('active', selected);
+          candidate.setAttribute('aria-pressed', selected ? 'true' : 'false');
+        });
+        document.querySelectorAll('[data-pricing-panel]').forEach(function (panel) {
+          panel.hidden = panel.getAttribute('data-pricing-panel') !== audience;
+        });
+        var heading = document.getElementById('pricing-heading');
+        var subtitle = document.getElementById('pricing-subtitle');
+        if (heading) heading.textContent = audience === 'personal' ? 'Personal Plan' : 'Organization Plans';
+        if (subtitle) {
+          subtitle.textContent = audience === 'personal'
+            ? 'Protect one personal Outlook account. Start with 10 free scans and save the cost of two months when billed annually.'
+            : 'Simple per-user pricing with a five-user minimum. Save the cost of two months when billed annually.';
+        }
+      });
+    });
+  }
+
   var billingOptions = document.querySelectorAll('[data-billing-period]');
   if (billingOptions.length) {
     billingOptions.forEach(function (option) {
@@ -69,6 +94,10 @@
           link.href = 'https://dashboard.mailbond.us/dashboard/onboarding?tier=' +
             encodeURIComponent(plan) + '&billing=' + encodeURIComponent(period === 'annual' ? 'year' : 'month') +
             '&users=5';
+        });
+        document.querySelectorAll('.pricing-personal-link').forEach(function (link) {
+          link.href = 'https://dashboard.mailbond.us/dashboard/personal?billing=' +
+            encodeURIComponent(period === 'annual' ? 'year' : 'month');
         });
       });
     });
